@@ -1,0 +1,31 @@
+datasource db {
+  provider = "mysql" // You can change this to mysql or sqlite if using those
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Item {
+  id          Int    @id @default(autoincrement())
+  itemNumber  Int    @unique
+  name        String
+  prices      Price[]
+  sales       Sale[]
+}
+
+model Price {
+  id        Int    @id @default(autoincrement())
+  amount    Float
+  itemId    Int
+  item      Item   @relation(fields: [itemId], references: [id])
+}
+
+model Sale {
+  id        Int    @id @default(autoincrement())
+  quantity  Int
+  total     Float
+  itemId    Int
+  item      Item   @relation(fields: [itemId], references: [id])
+}
