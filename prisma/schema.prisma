@@ -27,5 +27,6 @@ model Sale {
   quantity  Int
   total     Float
   itemId    Int
+  soldAt    DateTime
   item      Item   @relation(fields: [itemId], references: [id])
 }

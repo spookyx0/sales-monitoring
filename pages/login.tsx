@@ -1,3 +1,6 @@
+"use client"
+
+import React from 'react';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
 import { useRouter } from 'next/router';
@@ -8,7 +11,7 @@ export default function LoginPage() {
 
   const onSubmit = async (data: any) => {
     try {
-      const res = await axios.post('http://localhost:3000/auth/login', data);
+      const res = await axios.post('http://localhost:3001/auth/login', data);
       localStorage.setItem('token', res.data.access_token);
       router.push('/items');
     } catch (err) {
@@ -24,8 +27,8 @@ export default function LoginPage() {
       >
         <h2 className="text-xl font-bold">Login</h2>
         <input
-          {...register('username')}
-          placeholder="Username"
+          {...register('email')}
+          placeholder="Email"
           className="border px-3 py-2 w-full rounded"
         />
         <input

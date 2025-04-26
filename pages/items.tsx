@@ -1,3 +1,6 @@
+"use client"
+
+import React from 'react';
 import { useEffect, useState } from 'react';
 import api from '../lib/api';
 import { Item } from '@prisma/client'; // Make sure you have the correct types
