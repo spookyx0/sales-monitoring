@@ -1,31 +1,36 @@
-import type { Config } from 'tailwindcss';
+import type { Config } from "tailwindcss";
 
 const config: Config = {
   content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
+    "./app/**/*.{ts,tsx,js,jsx}",
+    "./components/**/*.{ts,tsx,js,jsx}",
+    "./pages/**/*.{ts,tsx,js,jsx}",
   ],
   theme: {
     extend: {
       colors: {
-        primary: '#4CAF50',
-        secondary: '#FF9800',
-        neutral: '#F5F5F5',
-        dark: '#212121',
-        light: '#E0E0E0',
-        accent: '#FF5722',
+        background: "var(--background)",
+        foreground: "var(--foreground)",
       },
       fontFamily: {
-        sans: ['Inter', 'sans-serif'],
-        serif: ['Merriweather', 'serif'],
+        sans: ["Inter", "sans-serif"],
       },
-      boxShadow: {
-        'custom': '0 4px 10px rgba(0, 0, 0, 0.1)',
+      transitionProperty: {
+        'height': 'height',
+      },
+      container: {
+        center: true,
+        padding: "1rem",
+        screens: {
+          "2xl": "1280px",
+        },
+      },
+      borderRadius: {
+        "2xl": "1rem",
       },
     },
   },
+  darkMode: "media", // or 'class' if you prefer toggling manually
   plugins: [],
 };
-
 export default config;

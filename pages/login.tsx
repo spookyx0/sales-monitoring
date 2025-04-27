@@ -11,7 +11,7 @@ export default function LoginPage() {
     e.preventDefault();
     try {
       // Assume a function `login` that performs authentication and returns a token
-      const res = await fetch('/api/auth/login', {
+      const res = await fetch('/auth/login', {
         method: 'POST',
         body: JSON.stringify({ email, password }),
         headers: { 'Content-Type': 'application/json' },
@@ -76,7 +76,7 @@ export default function LoginPage() {
 
         <div className="mt-4 text-center">
           <p className="text-sm text-gray-600">
-            Don't have an account?{' '}
+            Don&apos;t have an account?{' '}
             <a href="/register" className="text-primary font-semibold hover:underline">
               Sign up
             </a>

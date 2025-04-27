@@ -1,6 +1,6 @@
 // pages/sales.tsx
 import { useEffect, useState } from 'react';
-import { Sale, Item } from '@prisma/client';
+import { Item } from '@prisma/client';
 import api from '../lib/api';
 import SalesForm from '../components/SaleForm';
 
